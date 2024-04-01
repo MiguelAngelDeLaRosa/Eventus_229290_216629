@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "524485502255",
+    "project_id": "eventus-57f84",
+    "storage_bucket": "eventus-57f84.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524485502255:android:38432abe705984a3a16dda",
+        "android_client_info": {
+          "package_name": "mx.edu.itson.potros.eventus"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3YMp_8pV7iCmZlOU_XnN649SKSmTbgNY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
