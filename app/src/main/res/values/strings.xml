@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Eventus</string>
+    <string name="iniciar">Iniciar sesión</string>
+    <string name="registrar_user">Registrarse</string>
 </resources>
