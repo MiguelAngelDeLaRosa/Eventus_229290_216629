@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/naranja"
+    tools:context=".Menu">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:scaleType="center"
+            android:src="@drawable/LogoEventus3"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnRegistro"
+        android:layout_marginTop="100dp"
+        android:layout_width="237dp"
+        android:layout_height="59dp"
+        android:text="@string/btnRegistrarEvento"
+        android:textSize="25sp"
+        android:textColor="@color/naranja"
+        android:layout_gravity="center"
+        android:background="@drawable/round_button"/>
+
+    <Button
+        android:id="@+id/btnAnticipos"
+        android:layout_marginTop="25dp"
+        android:layout_width="237dp"
+        android:layout_height="59dp"
+        android:text="@string/btnAnticipos"
+        android:textSize="25sp"
+        android:textColor="@color/naranja"
+        android:layout_gravity="center"
+        android:background="@drawable/round_button"/>
+
+    <Button
+        android:id="@+id/btnCotizaciones"
+        android:layout_marginTop="25dp"
+        android:layout_width="237dp"
+        android:layout_height="59dp"
+        android:text="@string/btnCotizaciones"
+        android:textSize="25sp"
+        android:textColor="@color/naranja"
+        android:layout_gravity="center"
+        android:background="@drawable/round_button"/>
+
+    <Button
+        android:id="@+id/btnSalir"
+        android:layout_marginTop="25dp"
+        android:layout_width="237dp"
+        android:layout_height="59dp"
+        android:text="@string/btnSalir"
+        android:textSize="25sp"
+        android:textColor="@color/naranja"
+        android:layout_gravity="center"
+        android:background="@drawable/round_button"/>
+
+</LinearLayout>

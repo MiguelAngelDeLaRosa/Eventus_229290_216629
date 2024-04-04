@@ -2,4 +2,13 @@
     <string name="app_name">Eventus</string>
     <string name="iniciar">Iniciar sesión</string>
     <string name="registrar_user">Registrarse</string>
+    <string name="nombre_usuario">Usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellido">Apellido</string>
+    <string name="email">E-mail</string>
+    <string name="btnRegistrarEvento">Registrar evento</string>
+    <string name="btnAnticipos">Anticipos</string>
+    <string name="btnCotizaciones">Cotizaciones</string>
+    <string name="btnSalir">Salir</string>
 </resources>
