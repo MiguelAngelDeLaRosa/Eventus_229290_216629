@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SelectTipoEvento">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:scaleType="center"
+        android:src="@drawable/LogoEventus3"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:text="@string/select_event"
+        android:textSize="25sp"
+        android:textColor="@color/naranja"
+        android:layout_gravity="center_horizontal"/>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:layout_marginTop="40dp"
+        android:paddingHorizontal="50dp">
+
+        <Button
+            android:id="@+id/btnCumple"
+            android:text="@string/option_cumple"
+            android:layout_columnWeight="1"
+            android:textSize="20sp"
+            android:paddingHorizontal="20dp"
+            android:layout_marginRight="2dp"
+            android:paddingVertical="20dp"
+            android:textColor="@color/naranja"
+            android:layout_gravity="fill_horizontal"
+            android:background="@drawable/first_gradient"/>
+
+        <Button
+            android:id="@+id/btnFindeano"
+            android:text="@string/option_findeaño"
+            android:layout_columnWeight="1"
+            android:textSize="20sp"
+            android:paddingHorizontal="20dp"
+            android:layout_marginRight="2dp"
+            android:paddingVertical="20dp"
+            android:textColor="@color/naranja"
+            android:layout_gravity="fill_horizontal"
+            android:background="@drawable/first_gradient"/>
+
+        <Button
+            android:id="@+id/btnBoda"
+            android:text="@string/option_boda"
+            android:layout_columnWeight="1"
+            android:textSize="20sp"
+            android:paddingHorizontal="20dp"
+            android:layout_marginRight="2dp"
+            android:paddingVertical="20dp"
+            android:textColor="@color/naranja"
+            android:layout_gravity="fill_horizontal"
+            android:background="@drawable/first_gradient"/>
+
+        <Button
+            android:id="@+id/btnShow"
+            android:text="@string/option_show"
+            android:layout_columnWeight="1"
+            android:textSize="20sp"
+            android:paddingHorizontal="20dp"
+            android:layout_marginRight="2dp"
+            android:paddingVertical="20dp"
+            android:textColor="@color/naranja"
+            android:layout_gravity="fill_horizontal"
+            android:background="@drawable/first_gradient"/>
+
+        <Button
+            android:id="@+id/btnSoltero"
+            android:text="@string/option_despedia_soltero"
+            android:layout_columnWeight="1"
+            android:textSize="11sp"
+            android:paddingHorizontal="20dp"
+            android:layout_marginRight="2dp"
+            android:paddingVertical="20dp"
+            android:textColor="@color/naranja"
+            android:layout_gravity="fill_horizontal"
+            android:background="@drawable/first_gradient"/>
+
+        <Button
+            android:id="@+id/btnSoltera"
+            android:text="@string/option_despedia_soltera"
+            android:layout_columnWeight="1"
+            android:textSize="11sp"
+            android:paddingHorizontal="20dp"
+            android:layout_marginRight="2dp"
+            android:paddingVertical="20dp"
+            android:textColor="@color/naranja"
+            android:layout_gravity="fill_horizontal"
+            android:background="@drawable/first_gradient"/>
+
+        <Button
+            android:id="@+id/btnGraduacion"
+            android:text="@string/option_graduacion"
+            android:layout_columnWeight="1"
+            android:textSize="20sp"
+            android:paddingHorizontal="20dp"
+            android:layout_marginRight="2dp"
+            android:paddingVertical="20dp"
+            android:textColor="@color/naranja"
+            android:layout_gravity="fill_horizontal"
+            android:background="@drawable/first_gradient"/>
+
+        <Button
+            android:id="@+id/btnBabyshower"
+            android:text="@string/option_babyshower"
+            android:layout_columnWeight="1"
+            android:textSize="19sp"
+            android:paddingHorizontal="20dp"
+            android:layout_marginRight="2dp"
+            android:paddingVertical="20dp"
+            android:textColor="@color/naranja"
+            android:layout_gravity="fill_horizontal"
+            android:background="@drawable/first_gradient"/>
+
+    </GridLayout>
+
+</LinearLayout>
