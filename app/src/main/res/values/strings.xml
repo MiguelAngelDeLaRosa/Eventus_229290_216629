@@ -7,11 +7,16 @@
     <string name="nombre">Nombre</string>
     <string name="apellido">Apellido</string>
     <string name="email">E-mail</string>
+
     <string name="btnRegistrarEvento">Registrar evento</string>
     <string name="btnAnticipos">Anticipos</string>
     <string name="btnCotizaciones">Cotizaciones</string>
+    <string name="btnContinuar">Continuar</string>
     <string name="btnSalir">Salir</string>
+    <string name="btnRegresar">Regresar</string>
+
     <string name="select_event">Selecciona el tipo de evento</string>
+
     <string name="option_cumple">Cumpleaños</string>
     <string name="option_findeaño">Fin de año</string>
     <string name="option_boda">Boda</string>
@@ -20,4 +25,11 @@
     <string name="option_despedia_soltera">Despedida de soltera</string>
     <string name="option_graduacion">Graduación</string>
     <string name="option_babyshower">Baby shower</string>
+
+    <string name="txtDatosDelEvento">Datos del evento</string>
+    <string name="txtNombreEvento">Nombre del evento</string>
+    <string name="txtFechaEvento">Fecha del evento</string>
+    <string name="txtHorario">Horario</string>
+    <string name="txtHorarioInicio">Inicio</string>
+    <string name="txtHorarioFinal">Final</string>
 </resources>
