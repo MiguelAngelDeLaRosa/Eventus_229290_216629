@@ -127,4 +127,26 @@
 
     </GridLayout>
 
+    <Button
+        android:id="@+id/btnContinuar"
+        android:layout_marginTop="15dp"
+        android:layout_width="237dp"
+        android:layout_height="59dp"
+        android:text="@string/btnContinuar"
+        android:textSize="25sp"
+        android:textColor="@color/naranja"
+        android:layout_gravity="center"
+        android:background="@drawable/round_button2"/>
+
+    <Button
+        android:id="@+id/btnRegresar"
+        android:layout_marginTop="5dp"
+        android:layout_width="237dp"
+        android:layout_height="59dp"
+        android:text="@string/btnRegresar"
+        android:textSize="25sp"
+        android:textColor="@color/naranja"
+        android:layout_gravity="center"
+        android:background="@drawable/round_button2"/>
+
 </LinearLayout>
