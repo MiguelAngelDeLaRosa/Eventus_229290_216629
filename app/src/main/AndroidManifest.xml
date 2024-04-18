@@ -13,6 +13,24 @@
         android:theme="@style/Theme.Eventus"
         tools:targetApi="31">
         <activity
+            android:name=".Anticipo_registro"
+            android:exported="false" />
+        <activity
+            android:name=".Anticipo_evento"
+            android:exported="false" />
+        <activity
+            android:name=".Seleccion_evento"
+            android:exported="false" />
+        <activity
+            android:name=".Evento_registro"
+            android:exported="false" />
+        <activity
+            android:name=".Cotizacion_evento"
+            android:exported="false" />
+        <activity
+            android:name=".Registrar_datos_paquete"
+            android:exported="false" />
+        <activity
             android:name=".Registrar_datos_cliente"
             android:exported="false" />
         <activity
