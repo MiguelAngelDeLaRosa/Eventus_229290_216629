@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/naranja_light"
     tools:context=".SelectTipoEvento">
 
     <ImageView
@@ -19,7 +20,7 @@
         android:fontFamily="sans-serif"
         android:text="@string/select_event"
         android:textSize="25sp"
-        android:textColor="@color/naranja"
+        android:textColor="@color/white"
         android:layout_gravity="center_horizontal"/>
 
     <GridLayout
@@ -27,7 +28,7 @@
         android:layout_height="wrap_content"
         android:columnCount="2"
         android:layout_marginTop="40dp"
-        android:paddingHorizontal="50dp">
+        android:paddingHorizontal="15dp">
 
         <Button
             android:id="@+id/btnCumple"
@@ -128,19 +129,8 @@
     </GridLayout>
 
     <Button
-        android:id="@+id/btnContinuar"
-        android:layout_marginTop="15dp"
-        android:layout_width="237dp"
-        android:layout_height="59dp"
-        android:text="@string/btnContinuar"
-        android:textSize="25sp"
-        android:textColor="@color/naranja"
-        android:layout_gravity="center"
-        android:background="@drawable/round_button2"/>
-
-    <Button
         android:id="@+id/btnRegresar"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="25dp"
         android:layout_width="237dp"
         android:layout_height="59dp"
         android:text="@string/btnRegresar"
