@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".IniciarSesion">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:scaleType="center"
-        android:src="@drawable/LogoEventus3"/>
+        android:src="@drawable/logo_eventus3"/>
 
     <EditText
         android:id="@+id/username"
