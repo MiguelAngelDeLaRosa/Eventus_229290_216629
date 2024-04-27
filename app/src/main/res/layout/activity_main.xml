@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="550dp"
         android:scaleType="center"
-        android:src="@drawable/LogoEventus"/>
+        android:src="@drawable/logo_eventus"/>
     
     <LinearLayout
         android:layout_width="match_parent"

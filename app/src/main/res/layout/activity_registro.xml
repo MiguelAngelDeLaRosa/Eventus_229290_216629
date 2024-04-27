@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="230dp"
         android:scaleType="center"
-        android:src="@drawable/LogoEventus3"/>
+        android:src="@drawable/logo_eventus3"/>
 
     <LinearLayout
         android:layout_width="match_parent"

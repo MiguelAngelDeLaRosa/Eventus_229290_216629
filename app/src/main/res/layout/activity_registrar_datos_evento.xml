@@ -12,14 +12,13 @@
         android:layout_height="150dp"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btnRegresar"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:text="<-"
-            android:textSize="25sp"
-            android:textColor="@color/naranja"
-            android:background="@drawable/round_button2"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/back_button"/>
 
         <TextView
             android:id="@+id/titulo_evento"

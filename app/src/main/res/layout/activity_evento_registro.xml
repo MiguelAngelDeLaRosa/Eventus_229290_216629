@@ -23,7 +23,7 @@
                 android:layout_width="200dp"
                 android:layout_height="match_parent"
                 android:scaleType="center"
-                android:background="@drawable/LogoEventus3"
+                android:background="@drawable/logo_eventus3"
                 android:layout_centerInParent="true"/>
         </RelativeLayout>
     </LinearLayout>
@@ -46,7 +46,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:backgroundTint="@color/black"
-                android:background="@drawable/LogoEventus2"/>
+                android:background="@drawable/logo_eventus2"/>
 
             <TextView
                 android:layout_width="match_parent"
