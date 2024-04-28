@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/naranja_light"
     tools:context=".Registrar_datos_cliente">
 
     <ImageView
@@ -28,6 +29,7 @@
         android:layout_gravity="center"
         android:hint="@string/nombre"
         android:inputType="textPersonName"
+        android:textAlignment="center"
         android:background="@drawable/round_button"
         android:layout_marginTop="10dp"/>
 
@@ -38,6 +40,7 @@
         android:layout_gravity="center"
         android:hint="@string/telefono"
         android:inputType="textPhonetic"
+        android:textAlignment="center"
         android:background="@drawable/round_button"
         android:layout_marginTop="15dp"/>
 
@@ -48,6 +51,7 @@
         android:layout_gravity="center"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
+        android:textAlignment="center"
         android:background="@drawable/round_button"
         android:layout_marginTop="15dp"/>
 

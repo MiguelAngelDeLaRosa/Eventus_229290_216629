@@ -30,27 +30,31 @@ class Registrar_datos_evento : AppCompatActivity() {
             tipoEventoText.text = tipoEvento
         }
 
-        botonContinuar()
+        botonContinuar(tipoEvento)
     }
 
-    private fun botonContinuar() {
+    private fun botonContinuar(tipoEvento: String) {
         val btnSiguiente: Button = findViewById(R.id.btnContinuar)
+        val txtNombreEvento = findViewById<EditText>(R.id.edit_nombreEvento)
+        val edtFecha = findViewById<EditText>(R.id.edit_fechaEvento)
+        val edtInicio = findViewById<EditText>(R.id.ed_horaInicio)
+        val edtFinal = findViewById<EditText>(R.id.ed_horaFinal)
         // Intentar crear las variables de los campos aqui como en validarCampos
         btnSiguiente.setOnClickListener(){
             if (!validarCampos()){
-                //var horario: Horario = Horario(edtInicio.text.toString(), edtFinal.text.toString())
-                //var nombreEvento = txtNombreEvento.text.toString()
+                var horario: Horario = Horario(edtInicio.text.toString(), edtFinal.text.toString())
+                var nombreEvento = txtNombreEvento.text.toString()
 
-                //val fechaString = edtFecha.text.toString()
-                //val dateFormat = SimpleDateFormat("dd/MM/yyyy")
-                //val fechaEvento: Date = dateFormat.parse(fechaString)
-                //var evento: Evento = Evento(nombreEvento, tipoEvento, fechaEvento, horario)
+                val fechaString = edtFecha.text.toString()
+                val dateFormat = SimpleDateFormat("dd/MM/yyyy")
+                val fechaEvento: Date = dateFormat.parse(fechaString)
+                var evento: Evento = Evento(nombreEvento, tipoEvento, fechaEvento, horario)
 
-                //val enviarTipo : Bundle = Bundle()
-                //enviarTipo.putString("objEvento", evento.toString())
-                //var intent = Intent(this, Registrar_datos_cliente::class.java);
-                //intent.putExtra("objEvento", evento)
-                //startActivity(intent);
+                val enviarTipo : Bundle = Bundle()
+                enviarTipo.putString("objEvento", evento.toString())
+                var intent = Intent(this, Registrar_datos_cliente::class.java);
+                intent.putExtra("objEvento", enviarTipo)
+                startActivity(intent);
             }
         }
     }
