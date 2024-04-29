@@ -29,6 +29,7 @@
         android:layout_gravity="center"
         android:hint="@string/nombre"
         android:inputType="textPersonName"
+        android:textColor="@color/naranja"
         android:textAlignment="center"
         android:background="@drawable/round_button"
         android:layout_marginTop="10dp"/>
@@ -40,6 +41,7 @@
         android:layout_gravity="center"
         android:hint="@string/telefono"
         android:inputType="textPhonetic"
+        android:textColor="@color/naranja"
         android:textAlignment="center"
         android:background="@drawable/round_button"
         android:layout_marginTop="15dp"/>
@@ -51,6 +53,7 @@
         android:layout_gravity="center"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
+        android:textColor="@color/naranja"
         android:textAlignment="center"
         android:background="@drawable/round_button"
         android:layout_marginTop="15dp"/>

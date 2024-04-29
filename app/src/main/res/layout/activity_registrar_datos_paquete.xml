@@ -97,14 +97,21 @@
                 android:layout_margin="10dp"/>
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Bebidas"
-            android:textStyle="bold"
-            android:layout_marginTop="50dp"
-            android:textSize="20sp"
-            android:layout_gravity="center"/>
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bebidas"
+                android:textStyle="bold"
+                android:layout_marginTop="50dp"
+                android:textSize="20sp"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -151,15 +158,24 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/button_añadirPaquete"
-        android:layout_width="300dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Añadir Paquete"
-        android:backgroundTint="@color/naranja"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:layout_marginTop="60dp"
-        android:layout_gravity="center"/>
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/button_añadirPaquete"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="Añadir Paquete"
+            android:backgroundTint="@color/naranja"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginTop="60dp"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+
 </LinearLayout>

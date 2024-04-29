@@ -33,6 +33,7 @@ class Registrar_datos_evento : AppCompatActivity() {
         botonContinuar(tipoEvento)
     }
 
+    @SuppressLint("SimpleDateFormat")
     private fun botonContinuar(tipoEvento: String) {
         val btnSiguiente: Button = findViewById(R.id.btnContinuar)
         val txtNombreEvento = findViewById<EditText>(R.id.edit_nombreEvento)
@@ -47,13 +48,13 @@ class Registrar_datos_evento : AppCompatActivity() {
 
                 val fechaString = edtFecha.text.toString()
                 val dateFormat = SimpleDateFormat("dd/MM/yyyy")
-                val fechaEvento: Date = dateFormat.parse(fechaString)
+                val fechaEvento: Date? = dateFormat.parse(fechaString)
                 var evento: Evento = Evento(nombreEvento, tipoEvento, fechaEvento, horario)
 
-                val enviarTipo : Bundle = Bundle()
-                enviarTipo.putString("objEvento", evento.toString())
+                val enviarDatos : Bundle = Bundle()
+                enviarDatos.putSerializable("objEvento", evento)
                 var intent = Intent(this, Registrar_datos_cliente::class.java);
-                intent.putExtra("objEvento", enviarTipo)
+                intent.putExtras(enviarDatos)
                 startActivity(intent);
             }
         }
@@ -77,17 +78,39 @@ class Registrar_datos_evento : AppCompatActivity() {
 
                 })
             hayErrores = true
+            builder.show()
         }
 
-        if (!txtNombreEvento.text.toString().matches(Regex("[^0-9]+"))){
+        if (!txtNombreEvento.text.toString().matches(Regex("[a-zA-Z\\s]+"))){
             builder.setTitle("Error")
             builder.setMessage("El nombre del evento no puede llevar numeros")
                 .setPositiveButton("ACEPTAR", DialogInterface.OnClickListener{dialog, id ->
 
                 })
             hayErrores = true
+            builder.show()
         }
-        builder.show()
+
+        if(!edtFecha.text.toString().matches(Regex("^\\d{2}/\\d{2}/\\d{4}$"))){
+            builder.setTitle("Error")
+            builder.setMessage("La fecha del evento no es valida")
+                .setPositiveButton("ACEPTAR", DialogInterface.OnClickListener{dialog, id ->
+
+                })
+            hayErrores = true
+            builder.show()
+        }
+
+        if(!edtInicio.text.toString().matches(Regex("^\\d{1,2}:\\d{2}$")) ||
+            !edtFinal.text.toString().matches(Regex("^\\d{1,2}:\\d{2}$"))){
+            builder.setTitle("Error")
+            builder.setMessage("La hora del evento no es valida")
+                .setPositiveButton("ACEPTAR", DialogInterface.OnClickListener{dialog, id ->
+
+                })
+            hayErrores = true
+            builder.show()
+        }
         return hayErrores
     }
 }
