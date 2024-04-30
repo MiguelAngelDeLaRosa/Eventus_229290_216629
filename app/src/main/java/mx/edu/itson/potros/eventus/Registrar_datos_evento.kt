@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.TextView
 import mx.edu.itson.potros.eventus.dto.Evento
 import mx.edu.itson.potros.eventus.dto.Horario
@@ -28,9 +29,19 @@ class Registrar_datos_evento : AppCompatActivity() {
         if (recibirDatos != null) {
             tipoEvento = recibirDatos.getString("tipoEvento").toString()
             tipoEventoText.text = tipoEvento
+            botonContinuar(tipoEvento)
         }
 
-        botonContinuar(tipoEvento)
+        botonAtras()
+    }
+
+    private fun botonAtras() {
+        val btnAtras = findViewById<ImageButton>(R.id.back_button)
+
+        btnAtras.setOnClickListener(){
+            var intent = Intent(this, SelectTipoEvento::class.java);
+            startActivity(intent)
+        }
     }
 
     @SuppressLint("SimpleDateFormat")
