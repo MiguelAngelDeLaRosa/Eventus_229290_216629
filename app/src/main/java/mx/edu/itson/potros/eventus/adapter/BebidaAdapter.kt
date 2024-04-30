@@ -15,6 +15,7 @@ class BebidaAdapter(private val bebidaList: List<Bebida>): RecyclerView.Adapter<
     override fun getItemCount(): Int = bebidaList.size
 
     override fun onBindViewHolder(holder: BebidaViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        val item = bebidaList[position]
+        holder.render(item)
     }
 }

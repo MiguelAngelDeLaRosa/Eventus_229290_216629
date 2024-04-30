@@ -81,8 +81,8 @@
             android:layout_gravity="center"/>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
             android:background="@color/white"
             android:orientation="vertical"
             android:layout_marginTop="5dp"
@@ -91,8 +91,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewPlatillos"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="70dp"/>
+                android:layout_height="wrap_content"/>
 
         </LinearLayout>
 
@@ -113,8 +112,8 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
             android:background="@color/white"
             android:orientation="vertical"
             android:layout_marginTop="5dp"
@@ -123,8 +122,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewBebidas"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="70dp"/>
+                android:layout_height="wrap_content"/>
         </LinearLayout>
 
         <LinearLayout
@@ -135,6 +133,7 @@
             android:layout_marginTop="70dp">
 
             <CheckBox
+                android:id="@+id/chkPermisoAlcohol"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 

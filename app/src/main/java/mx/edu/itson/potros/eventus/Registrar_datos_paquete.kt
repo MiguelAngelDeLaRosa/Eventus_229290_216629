@@ -9,6 +9,8 @@ import android.widget.Adapter
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.BaseAdapter
+import android.widget.Button
+import android.widget.CheckBox
 import android.widget.ImageButton
 import android.widget.ListAdapter
 import android.widget.Spinner
@@ -21,13 +23,21 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import mx.edu.itson.potros.eventus.adapter.BebidaAdapter
 import mx.edu.itson.potros.eventus.adapter.PlatilloAdapter
+import mx.edu.itson.potros.eventus.dto.Bebida
 import mx.edu.itson.potros.eventus.dto.Evento
+import mx.edu.itson.potros.eventus.dto.Paquete
 import mx.edu.itson.potros.eventus.dto.Platillo
 import mx.edu.itson.potros.eventus.provider.BebidaProvider
 import mx.edu.itson.potros.eventus.provider.PlatilloProvider
 
 class Registrar_datos_paquete : AppCompatActivity() {
     var evento: Evento? = null
+    lateinit var permiso: CheckBox
+    lateinit var platillosElegidos: List<Platillo>
+    lateinit var bebidasElegidos: List<Bebida>
+    var opcion: String = ""
+    var costo: Double = 0.0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -41,11 +51,15 @@ class Registrar_datos_paquete : AppCompatActivity() {
         var recibirDatos: Bundle? = intent.extras
         if ( recibirDatos != null) {
             evento = recibirDatos.getSerializable("objEvento") as Evento?
-            Toast.makeText(this, evento.toString(), Toast.LENGTH_LONG).show()
             llenarSpinner()
         }
 
+        val chkPermiso: CheckBox = findViewById(R.id.chkPermisoAlcohol)
+        chkPermiso.isClickable = false
+        permiso = chkPermiso
+
         botonAtras()
+        botonSiguiente()
     }
 
     private fun botonAtras() {
@@ -85,6 +99,7 @@ class Registrar_datos_paquete : AppCompatActivity() {
     }
 
     private fun initRecycerView(option: String){
+        opcion = option
         val recyclerViewPlatillo = findViewById<RecyclerView>(R.id.recyclerViewPlatillos)
         val recyclerViewBebida = findViewById<RecyclerView>(R.id.recyclerViewBebidas)
         recyclerViewPlatillo.layoutManager = LinearLayoutManager(this)
@@ -93,18 +108,38 @@ class Registrar_datos_paquete : AppCompatActivity() {
         if (option == "Paquete simple"){
             recyclerViewPlatillo.adapter = PlatilloAdapter(PlatilloProvider.platillosListSimple)
             recyclerViewBebida.adapter = BebidaAdapter(BebidaProvider.bebidaListSimple)
+            platillosElegidos = PlatilloProvider.platillosListSimple
+            bebidasElegidos = BebidaProvider.bebidaListSimple
+            permiso.isChecked = false
+            costo = 500.0
         }
         if (option == "Paquete super fiesta"){
             recyclerViewPlatillo.adapter = PlatilloAdapter(PlatilloProvider.platillosListSuperFiesta)
             recyclerViewBebida.adapter = BebidaAdapter(BebidaProvider.bebidaListSuperFiesta)
+            platillosElegidos = PlatilloProvider.platillosListSuperFiesta
+            bebidasElegidos = BebidaProvider.bebidaListSuperFiesta
+            permiso.isChecked = false
+            costo = 1200.0
         }
         if (option == "Paquete Adultos"){
             recyclerViewPlatillo.adapter = PlatilloAdapter(PlatilloProvider.platillosListAdultos)
             recyclerViewBebida.adapter = BebidaAdapter(BebidaProvider.bebidaListAdultos)
+            platillosElegidos = PlatilloProvider.platillosListAdultos
+            bebidasElegidos = BebidaProvider.bebidaListAdultos
+            permiso.isChecked = true
+            costo = 1000.0
         }
     }
 
     private fun botonSiguiente() {
-        TODO("Not yet implemented")
+        val btnSiguiente: Button = findViewById(R.id.button_añadirPaquete)
+
+        btnSiguiente.setOnClickListener(){
+            if (!opcion.equals("Seleccione") || !opcion.equals("")) {
+                var paquete = Paquete(opcion, platillosElegidos, bebidasElegidos, permiso.isActivated, costo)
+                evento?.paquete ?: paquete
+                
+            }
+        }
     }
 }
