@@ -138,7 +138,12 @@ class Registrar_datos_paquete : AppCompatActivity() {
             if (!opcion.equals("Seleccione") || !opcion.equals("")) {
                 var paquete = Paquete(opcion, platillosElegidos, bebidasElegidos, permiso.isActivated, costo)
                 evento?.paquete ?: paquete
-                
+
+                val enviarDatos = Bundle()
+                enviarDatos.putSerializable("objEvento", evento)
+                var intent = Intent(this, Cotizacion_evento::class.java);
+                intent.putExtras(enviarDatos)
+                startActivity(intent);
             }
         }
     }
