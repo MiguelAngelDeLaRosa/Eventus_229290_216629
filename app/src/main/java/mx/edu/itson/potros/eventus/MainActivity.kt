@@ -10,11 +10,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val button : Button = findViewById(R.id.btnIniciar);
+        val buttonIniciarSesion : Button = findViewById(R.id.btnIniciar)
+        val buttonRegistrar: Button = findViewById(R.id.btnRegistro)
 
-        button.setOnClickListener {
-            var intent: Intent = Intent(this, IniciarSesion::class.java);
-            startActivity(intent);
+        buttonIniciarSesion.setOnClickListener {
+            var intent: Intent = Intent(this, IniciarSesion::class.java)
+            startActivity(intent)
+        }
+
+        buttonRegistrar.setOnClickListener {
+            var intent: Intent = Intent(this, Registro::class.java)
+            startActivity(intent)
         }
     }
 }
