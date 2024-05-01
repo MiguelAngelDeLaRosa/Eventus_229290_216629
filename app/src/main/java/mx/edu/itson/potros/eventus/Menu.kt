@@ -11,9 +11,17 @@ class Menu : AppCompatActivity() {
         setContentView(R.layout.activity_menu)
 
         val button : Button = findViewById(R.id.btnSalir)
+        val btnRegistro: Button = findViewById(R.id.btnRegistro);
+
+        var intent: Intent
 
         button.setOnClickListener(){
-            var intent: Intent = Intent(this, MainActivity::class.java);
+            intent = Intent(this, MainActivity::class.java);
+            startActivity(intent);
+        }
+
+        btnRegistro.setOnClickListener(){
+            intent = Intent(this, SelectTipoEvento::class.java);
             startActivity(intent);
         }
     }
