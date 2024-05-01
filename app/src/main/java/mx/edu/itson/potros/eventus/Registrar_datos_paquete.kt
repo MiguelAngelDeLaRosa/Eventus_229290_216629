@@ -59,7 +59,6 @@ class Registrar_datos_paquete : AppCompatActivity() {
         permiso = chkPermiso
 
         botonAtras()
-        botonSiguiente()
     }
 
     private fun botonAtras() {
@@ -105,40 +104,43 @@ class Registrar_datos_paquete : AppCompatActivity() {
         recyclerViewPlatillo.layoutManager = LinearLayoutManager(this)
         recyclerViewBebida.layoutManager = LinearLayoutManager(this)
 
-        if (option == "Paquete simple"){
-            recyclerViewPlatillo.adapter = PlatilloAdapter(PlatilloProvider.platillosListSimple)
-            recyclerViewBebida.adapter = BebidaAdapter(BebidaProvider.bebidaListSimple)
-            platillosElegidos = PlatilloProvider.platillosListSimple
-            bebidasElegidos = BebidaProvider.bebidaListSimple
-            permiso.isChecked = false
-            costo = 500.0
+        when (option) {
+            "Paquete simple" -> {
+                platillosElegidos = PlatilloProvider.platillosListSimple
+                bebidasElegidos = BebidaProvider.bebidaListSimple
+                permiso.isChecked = false
+                costo = 500.0
+                recyclerViewPlatillo.adapter = PlatilloAdapter(platillosElegidos)
+                recyclerViewBebida.adapter = BebidaAdapter(bebidasElegidos)
+            }
+            "Paquete super fiesta" -> {
+                platillosElegidos = PlatilloProvider.platillosListSuperFiesta
+                bebidasElegidos = BebidaProvider.bebidaListSuperFiesta
+                permiso.isChecked = false
+                costo = 1200.0
+                recyclerViewPlatillo.adapter = PlatilloAdapter(platillosElegidos)
+                recyclerViewBebida.adapter = BebidaAdapter(bebidasElegidos)
+            }
+            "Paquete Adultos" -> {
+                platillosElegidos = PlatilloProvider.platillosListAdultos
+                bebidasElegidos = BebidaProvider.bebidaListAdultos
+                permiso.isChecked = true
+                costo = 1000.0
+                recyclerViewPlatillo.adapter = PlatilloAdapter(platillosElegidos)
+                recyclerViewBebida.adapter = BebidaAdapter(bebidasElegidos)
+            }
         }
-        if (option == "Paquete super fiesta"){
-            recyclerViewPlatillo.adapter = PlatilloAdapter(PlatilloProvider.platillosListSuperFiesta)
-            recyclerViewBebida.adapter = BebidaAdapter(BebidaProvider.bebidaListSuperFiesta)
-            platillosElegidos = PlatilloProvider.platillosListSuperFiesta
-            bebidasElegidos = BebidaProvider.bebidaListSuperFiesta
-            permiso.isChecked = false
-            costo = 1200.0
-        }
-        if (option == "Paquete Adultos"){
-            recyclerViewPlatillo.adapter = PlatilloAdapter(PlatilloProvider.platillosListAdultos)
-            recyclerViewBebida.adapter = BebidaAdapter(BebidaProvider.bebidaListAdultos)
-            platillosElegidos = PlatilloProvider.platillosListAdultos
-            bebidasElegidos = BebidaProvider.bebidaListAdultos
-            permiso.isChecked = true
-            costo = 1000.0
-        }
+        botonSiguiente()
     }
 
     private fun botonSiguiente() {
         val btnSiguiente: Button = findViewById(R.id.button_añadirPaquete)
 
         btnSiguiente.setOnClickListener(){
-            if (!opcion.equals("Seleccione") || !opcion.equals("")) {
+            if (opcion != "Seleccione" && opcion != "") {
                 var paquete = Paquete(opcion, platillosElegidos, bebidasElegidos, permiso.isActivated, costo)
-                evento?.paquete ?: paquete
-
+                evento?.paquete = paquete
+                //Toast.makeText(this, evento?.paquete.toString(), Toast.LENGTH_LONG).show()
                 val enviarDatos = Bundle()
                 enviarDatos.putSerializable("objEvento", evento)
                 var intent = Intent(this, Cotizacion_evento::class.java);

@@ -1,18 +1,29 @@
 package mx.edu.itson.potros.eventus
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import mx.edu.itson.potros.eventus.dto.Evento
+import mx.edu.itson.potros.eventus.dto.Pago
 
 class Cotizacion_evento : AppCompatActivity() {
     var evento: Evento? = null
     var costoPorHora: Double = 0.0
     var montoToal: Double = 0.0
+    var costoPaquete: Double = 0.0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -25,12 +36,59 @@ class Cotizacion_evento : AppCompatActivity() {
         var recibirDatos: Bundle? = intent.extras
         if ( recibirDatos != null) {
             evento = recibirDatos.getSerializable("objEvento") as Evento?
-            Toast.makeText(this, evento?.horario.toString(), Toast.LENGTH_LONG).show()
             llenarDatos()
         }
-
+        botonBack()
+        botonRegistrar()
     }
 
+    private fun botonRegistrar() {
+        val btnRegistrar = findViewById<Button>(R.id.btn_registrar_evento)
+
+        btnRegistrar.setOnClickListener(){
+            registrarEvento()
+        }
+    }
+
+    private fun registrarEvento() {
+        val fb = FirebaseDatabase.getInstance().getReference("Evento")
+        fb.addListenerForSingleValueEvent(object : ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val pago = Pago(costoPorHora, costoPaquete, montoToal)
+                evento?.monto = pago
+                fb.push().setValue(evento)
+                siguiente()
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        })
+    }
+
+    private fun siguiente() {
+        Toast.makeText(this, "Se registro el evento", Toast.LENGTH_LONG).show()
+        val enviarDatos = Bundle()
+        enviarDatos.putSerializable("objEvento", evento)
+        var intent = Intent(this, Evento_registro::class.java);
+        intent.putExtras(enviarDatos)
+        startActivity(intent);
+    }
+
+    private fun botonBack() {
+        val btnAtras = findViewById<ImageButton>(R.id.back_button)
+
+        btnAtras.setOnClickListener(){
+            val enviarDatos : Bundle = Bundle()
+            enviarDatos.putSerializable("objEvento", evento)
+            var intent = Intent(this, Registrar_datos_paquete::class.java);
+            intent.putExtras(enviarDatos)
+            startActivity(intent)
+        }
+    }
+
+    @SuppressLint("SetTextI18n")
     private fun llenarDatos() {
         val txtCostoHora: TextView = findViewById(R.id.txt_costo_hora)
         val txtCostoPaquete: TextView = findViewById(R.id.txt_costo_paquete)
@@ -38,14 +96,14 @@ class Cotizacion_evento : AppCompatActivity() {
 
         val hInicio: String = evento?.horario?.horaInicio ?: "1:00"
         val hFinal: String = evento?.horario?.horaFinal ?: "6:00"
-        val costoPaquete = evento?.paquete?.costo
+        costoPaquete = evento?.paquete?.costo!!
 
-        var costoXhora = calculoCostoPorHora(hInicio, hFinal)
+        costoPorHora = calculoCostoPorHora(hInicio, hFinal)
 
-        txtCostoPaquete.text = costoPaquete.toString()
-        val monto = costoPaquete?.plus(1000.0)
-        txtMonto.text = monto.toString()
-        txtCostoHora.text = costoXhora.toString()
+        montoToal = costoPaquete.plus(costoPorHora)
+        txtMonto.text = "Monto total: $$montoToal"
+        txtCostoHora.text = "Costo por hora: $$costoPorHora"
+        txtCostoPaquete.text = "Costo del paquete: $$costoPaquete"
     }
 
     private fun calculoCostoPorHora(horaInicio: String, horaFinal: String): Double {

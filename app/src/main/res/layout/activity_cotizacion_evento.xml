@@ -16,6 +16,7 @@
         android:background="@color/naranja">
 
         <ImageButton
+            android:id="@+id/back_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="30dp"
@@ -63,7 +64,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_gravity="center"
-            android:layout_marginTop="50dp">
+            android:layout_marginTop="20dp">
 
             <TextView
                 android:id="@+id/txt_costo_hora"
@@ -101,6 +102,7 @@
                 android:textAlignment="center"/>
 
             <Button
+                android:id="@+id/btn_registrar_evento"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:text="Registrar Evento"
