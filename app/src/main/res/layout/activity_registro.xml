@@ -16,7 +16,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="@color/naranja">
 
@@ -77,7 +77,7 @@
 
         <Button
             android:id="@+id/btnRegistro"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="100dp"
             android:layout_width="237dp"
             android:layout_height="59dp"
             android:text="@string/registrar_user"
