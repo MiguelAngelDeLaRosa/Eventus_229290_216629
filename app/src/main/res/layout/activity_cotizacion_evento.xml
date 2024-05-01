@@ -16,6 +16,7 @@
         android:background="@color/naranja">
 
         <ImageButton
+            android:id="@+id/back_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="30dp"
@@ -36,63 +37,85 @@
         </RelativeLayout>
     </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cotización del Evento"
-        android:textStyle="bold"
-        android:layout_marginTop="100dp"
-        android:textSize="20sp"
-        android:layout_gravity="center"/>
-
     <LinearLayout
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp">
+        android:layout_gravity="center">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/spinner_background"
-            android:text="$ costo del local por hora"
-            android:textSize="15sp"
+            android:text="Cotización del Evento"
             android:textStyle="bold"
-            android:padding="20dp"
-            android:textAlignment="center"/>
+            android:layout_marginTop="100dp"
+            android:textSize="20sp"
+            android:layout_gravity="center"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/spinner_background"
-            android:text="$ costo del paquete"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:layout_marginTop="50dp"
-            android:padding="20dp"
-            android:textAlignment="center"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/spinner_background"
-            android:text="$ monto total"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:layout_marginTop="50dp"
-            android:padding="20dp"
-            android:textAlignment="center"/>
     </LinearLayout>
 
-    <Button
-        android:layout_width="300dp"
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Registrar Evento"
-        android:backgroundTint="@color/naranja"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:layout_gravity="center"
-        android:layout_marginTop="180dp"/>
+        tools:ignore="ScrollViewCount">
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/txt_costo_hora"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/spinner_background"
+                android:text="$ costo del local por hora"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:padding="20dp"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/txt_costo_paquete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/spinner_background"
+                android:text="$ costo del paquete"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginTop="50dp"
+                android:padding="20dp"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/txt_monto_total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/spinner_background"
+                android:text="$ monto total"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginTop="50dp"
+                android:padding="20dp"
+                android:textAlignment="center"/>
+
+            <Button
+                android:id="@+id/btn_registrar_evento"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="Registrar Evento"
+                android:backgroundTint="@color/naranja"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_gravity="center"
+                android:layout_marginTop="60dp"/>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
 </LinearLayout>
