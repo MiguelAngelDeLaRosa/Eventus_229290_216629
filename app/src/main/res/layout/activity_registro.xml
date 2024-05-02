@@ -14,89 +14,95 @@
         android:scaleType="center"
         android:src="@drawable/logo_eventus3"/>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@color/naranja">
+        android:layout_height="wrap_content">
 
-        <EditText
-            android:id="@+id/nombre"
-            android:layout_width="350dp"
-            android:layout_height="60dp"
-            android:hint="@string/nombre"
-            android:inputType="text"
-            android:background="@drawable/round_button"
-            android:textAlignment="center"
-            android:layout_gravity="center"
-            android:layout_marginTop="45dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/naranja">
 
-        <EditText
-            android:id="@+id/apellido"
-            android:layout_width="350dp"
-            android:layout_height="60dp"
-            android:hint="@string/apellido"
-            android:inputType="text"
-            android:background="@drawable/round_button"
-            android:textAlignment="center"
-            android:layout_gravity="center"
-            android:layout_marginTop="15dp"/>
+            <EditText
+                android:id="@+id/nombre"
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:hint="@string/nombre"
+                android:inputType="text"
+                android:background="@drawable/round_button"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:layout_marginTop="45dp"/>
 
-        <EditText
-            android:id="@+id/email"
-            android:layout_width="350dp"
-            android:layout_height="60dp"
-            android:hint="@string/email"
-            android:inputType="textEmailAddress"
-            android:background="@drawable/round_button"
-            android:textAlignment="center"
-            android:layout_gravity="center"
-            android:layout_marginTop="15dp"/>
+            <EditText
+                android:id="@+id/apellido"
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:hint="@string/apellido"
+                android:inputType="text"
+                android:background="@drawable/round_button"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"/>
 
-        <EditText
-            android:id="@+id/username"
-            android:layout_width="350dp"
-            android:layout_height="60dp"
-            android:hint="@string/nombre_usuario"
-            android:inputType="text"
-            android:background="@drawable/round_button"
-            android:textAlignment="center"
-            android:layout_gravity="center"
-            android:layout_marginTop="15dp"/>
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:background="@drawable/round_button"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"/>
 
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="350dp"
-            android:layout_height="60dp"
-            android:hint="@string/password"
-            android:inputType="textPassword"
-            android:background="@drawable/round_button"
-            android:textAlignment="center"
-            android:layout_gravity="center"
-            android:layout_marginTop="15dp"/>
+            <EditText
+                android:id="@+id/username"
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:hint="@string/nombre_usuario"
+                android:inputType="text"
+                android:background="@drawable/round_button"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"/>
 
-        <Button
-            android:id="@+id/btnRegistro"
-            android:layout_marginTop="100dp"
-            android:layout_width="237dp"
-            android:layout_height="59dp"
-            android:text="@string/registrar_user"
-            android:textSize="25sp"
-            android:textColor="@color/naranja"
-            android:layout_gravity="center"
-            android:background="@drawable/round_button2"/>
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:background="@drawable/round_button"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"/>
 
-        <Button
-            android:id="@+id/btnIniciar"
-            android:layout_marginTop="15dp"
-            android:layout_width="237dp"
-            android:layout_height="59dp"
-            android:text="@string/iniciar"
-            android:textSize="25sp"
-            android:textColor="@color/naranja"
-            android:layout_gravity="center"
-            android:background="@drawable/round_button2"/>
+            <Button
+                android:id="@+id/btnRegistro"
+                android:layout_marginTop="100dp"
+                android:layout_width="237dp"
+                android:layout_height="59dp"
+                android:text="@string/registrar_user"
+                android:textSize="25sp"
+                android:textColor="@color/naranja"
+                android:layout_gravity="center"
+                android:background="@drawable/round_button2"/>
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/btnIniciar"
+                android:layout_marginTop="15dp"
+                android:layout_width="237dp"
+                android:layout_height="59dp"
+                android:text="@string/iniciar"
+                android:textSize="25sp"
+                android:textColor="@color/naranja"
+                android:layout_gravity="center"
+                android:background="@drawable/round_button2"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>
