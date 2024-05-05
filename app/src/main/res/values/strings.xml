@@ -32,6 +32,6 @@
     <string name="txtFechaEvento">Fecha del evento</string>
     <string name="txtHorario">Horario</string>
     <string name="txtHorarioInicio">Inicio</string>
-    <string name="txtHorarioFinal">Final</string>
+    <string name="txtHorarioFinal">Fin</string>
     <string name="txtDatosDelCliente">Datos del cliente</string>
 </resources>

@@ -63,6 +63,8 @@
         android:inputType="date"
         android:textColor="@color/naranja"
         android:textAlignment="center"
+        android:clickable="false"
+        android:focusable="false"
         android:background="@drawable/round_button"
         android:layout_marginTop="30dp"/>
 
@@ -89,6 +91,8 @@
             android:inputType="time"
             android:textColor="@color/naranja"
             android:textAlignment="center"
+            android:clickable="false"
+            android:focusable="false"
             android:background="@drawable/round_button"
             android:layout_marginStart="35dp"/>
 
@@ -108,6 +112,8 @@
             android:hint="@string/txtHorarioFinal"
             android:inputType="time"
             android:textColor="@color/naranja"
+            android:clickable="false"
+            android:focusable="false"
             android:textAlignment="center"
             android:background="@drawable/round_button"/>
 

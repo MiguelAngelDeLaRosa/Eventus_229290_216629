@@ -9,11 +9,11 @@ public class Evento implements Serializable {
     private String tipoEvento;
     private Paquete paquete;
     private Cliente cliente;
-    private Date fechaEvento;
+    private String fechaEvento;
     private Pago monto;
     private Horario horario;
 
-    public Evento(String nombreEvento, String tipoEvento, Date fechaEvento, Horario horario) {
+    public Evento(String nombreEvento, String tipoEvento, String fechaEvento, Horario horario) {
         this.nombreEvento = nombreEvento;
         this.tipoEvento = tipoEvento;
         this.fechaEvento = fechaEvento;
@@ -52,11 +52,11 @@ public class Evento implements Serializable {
         this.cliente = cliente;
     }
 
-    public Date getFechaEvento() {
+    public String getFechaEvento() {
         return fechaEvento;
     }
 
-    public void setFechaEvento(Date fechaEvento) {
+    public void setFechaEvento(String fechaEvento) {
         this.fechaEvento = fechaEvento;
     }
 
