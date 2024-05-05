@@ -17,6 +17,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import mx.edu.itson.potros.eventus.dto.Evento
 import mx.edu.itson.potros.eventus.dto.Pago
+import mx.edu.itson.potros.eventus.negocio.ControlAnticipo
 
 class Cotizacion_evento : AppCompatActivity() {
     var evento: Evento? = null
@@ -37,9 +38,9 @@ class Cotizacion_evento : AppCompatActivity() {
         if ( recibirDatos != null) {
             evento = recibirDatos.getSerializable("objEvento") as Evento?
             llenarDatos()
+            botonRegistrar()
         }
         botonBack()
-        botonRegistrar()
     }
 
     private fun botonRegistrar() {
@@ -57,6 +58,28 @@ class Cotizacion_evento : AppCompatActivity() {
                 val pago = Pago(costoPorHora, costoPaquete, montoToal)
                 evento?.monto = pago
                 fb.push().setValue(evento)
+                asignarControlAnticipos(evento)
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        })
+    }
+
+    private fun asignarControlAnticipos(evento: Evento?){
+        val control = evento?.let { ControlAnticipo(evento, it.cliente, null, false) }
+        if (control != null) {
+            registrarControl(control)
+        }
+    }
+
+    private fun registrarControl(controlAnticipo: ControlAnticipo){
+        val fb = FirebaseDatabase.getInstance().getReference("ControlAnticipos")
+        fb.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                fb.push().setValue(controlAnticipo)
                 siguiente()
             }
 

@@ -36,8 +36,7 @@ class Registrar_datos_cliente : AppCompatActivity() {
             if (!validarCampos(edtNombre, edtTelefono, edtEmail)){
                 var cliente : Cliente = Cliente(edtNombre.text.toString(),
                                         edtTelefono.text.toString(), edtEmail.text.toString())
-                evento?.cliente ?: Cliente(edtNombre.text.toString(),
-                    edtTelefono.text.toString(), edtEmail.text.toString())
+                evento?.cliente = cliente
 
                 val enviarDatos : Bundle = Bundle()
                 enviarDatos.putSerializable("objEvento", evento)

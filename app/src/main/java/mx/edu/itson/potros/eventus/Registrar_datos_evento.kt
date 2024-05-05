@@ -16,7 +16,9 @@ import java.text.SimpleDateFormat
 import java.util.Date
 
 class Registrar_datos_evento : AppCompatActivity() {
-
+    lateinit var fecha: EditText
+    lateinit var horaInicio: EditText
+    lateinit var horaFin: EditText
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registrar_datos_evento)
@@ -26,13 +28,49 @@ class Registrar_datos_evento : AppCompatActivity() {
         var recibirDatos : Bundle? = intent.extras
         var tipoEvento : String = ""
 
+        fecha = findViewById(R.id.edit_fechaEvento)
+        horaInicio = findViewById(R.id.ed_horaInicio)
+        horaFin = findViewById(R.id.ed_horaFinal)
+
         if (recibirDatos != null) {
             tipoEvento = recibirDatos.getString("tipoEvento").toString()
             tipoEventoText.text = tipoEvento
             botonContinuar(tipoEvento)
         }
 
+        fecha.setOnClickListener() { showDateDialog() }
+        horaInicio.setOnClickListener() { showInitTimeDialog() }
+        horaFin.setOnClickListener(){ showFinalTimeDialog() }
+
         botonAtras()
+    }
+
+    private fun showFinalTimeDialog() {
+        val timePicker = InitTimePickerFragment{onTimeSelected2(it)}
+        timePicker.show(supportFragmentManager, "Time")
+    }
+
+    private fun showInitTimeDialog() {
+        val timePicker = InitTimePickerFragment{onTimeSelected(it)}
+        timePicker.show(supportFragmentManager, "Time")
+    }
+
+    private fun onTimeSelected(time: String){
+        horaInicio.setText(time)
+    }
+
+    private fun onTimeSelected2(time: String){
+        horaFin.setText(time)
+    }
+
+    private fun showDateDialog() {
+        val datePicker = DatePickerFragment { day, month, year -> onDateSelected(day, month, year) }
+        datePicker.show(supportFragmentManager, "datePicker")
+    }
+
+    @SuppressLint("SetTextI18n")
+    fun onDateSelected(day: Int, month: Int, year: Int){
+        fecha.setText("$day/$month/$year")
     }
 
     private fun botonAtras() {
@@ -48,18 +86,13 @@ class Registrar_datos_evento : AppCompatActivity() {
     private fun botonContinuar(tipoEvento: String) {
         val btnSiguiente: Button = findViewById(R.id.btnContinuar)
         val txtNombreEvento = findViewById<EditText>(R.id.edit_nombreEvento)
-        val edtFecha = findViewById<EditText>(R.id.edit_fechaEvento)
-        val edtInicio = findViewById<EditText>(R.id.ed_horaInicio)
-        val edtFinal = findViewById<EditText>(R.id.ed_horaFinal)
         // Intentar crear las variables de los campos aqui como en validarCampos
         btnSiguiente.setOnClickListener(){
             if (!validarCampos()){
-                var horario: Horario = Horario(edtInicio.text.toString(), edtFinal.text.toString())
+                var horario: Horario = Horario(horaInicio.text.toString(), horaFin.text.toString())
                 var nombreEvento = txtNombreEvento.text.toString()
 
-                val fechaString = edtFecha.text.toString()
-                val dateFormat = SimpleDateFormat("dd/MM/yyyy")
-                val fechaEvento: Date? = dateFormat.parse(fechaString)
+                val fechaEvento: String = fecha.text.toString()
                 var evento: Evento = Evento(nombreEvento, tipoEvento, fechaEvento, horario)
 
                 val enviarDatos : Bundle = Bundle()
@@ -102,26 +135,6 @@ class Registrar_datos_evento : AppCompatActivity() {
             builder.show()
         }
 
-        if(!edtFecha.text.toString().matches(Regex("^\\d{2}/\\d{2}/\\d{4}$"))){
-            builder.setTitle("Error")
-            builder.setMessage("La fecha del evento no es valida")
-                .setPositiveButton("ACEPTAR", DialogInterface.OnClickListener{dialog, id ->
-
-                })
-            hayErrores = true
-            builder.show()
-        }
-
-        if(!edtInicio.text.toString().matches(Regex("^\\d{1,2}:\\d{2}$")) ||
-            !edtFinal.text.toString().matches(Regex("^\\d{1,2}:\\d{2}$"))){
-            builder.setTitle("Error")
-            builder.setMessage("La hora del evento no es valida")
-                .setPositiveButton("ACEPTAR", DialogInterface.OnClickListener{dialog, id ->
-
-                })
-            hayErrores = true
-            builder.show()
-        }
         return hayErrores
     }
 }

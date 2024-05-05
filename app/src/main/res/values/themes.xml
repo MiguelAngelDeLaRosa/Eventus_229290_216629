@@ -8,4 +8,12 @@
     </style>
 
     <style name="Theme.Eventus" parent="Base.Theme.Eventus" />
+    
+    <style name="datePickerTheme" parent="android:Theme.Material.Light.Dialog">
+        <item name="android:colorAccent">@color/naranja_light</item>
+    </style>
+
+    <style name="timePickerTheme" parent="android:Theme.Material.Light.Dialog">
+        <item name="android:colorAccent">@color/naranja_light</item>
+    </style>
 </resources>
