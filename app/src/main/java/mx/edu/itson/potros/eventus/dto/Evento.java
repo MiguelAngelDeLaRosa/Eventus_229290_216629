@@ -13,6 +13,9 @@ public class Evento implements Serializable {
     private Pago monto;
     private Horario horario;
 
+    public Evento() {
+    }
+
     public Evento(String nombreEvento, String tipoEvento, String fechaEvento, Horario horario) {
         this.nombreEvento = nombreEvento;
         this.tipoEvento = tipoEvento;
@@ -78,14 +81,6 @@ public class Evento implements Serializable {
 
     @Override
     public String toString() {
-        return "Evento{" +
-                "nombreEvento='" + nombreEvento + '\'' +
-                ", tipoEvento='" + tipoEvento + '\'' +
-                ", paquete=" + paquete +
-                ", cliente=" + cliente +
-                ", fechaEvento=" + fechaEvento +
-                ", monto=" + monto +
-                ", horario=" + horario +
-                '}';
+        return nombreEvento + ", fecha: "+ fechaEvento;
     }
 }
