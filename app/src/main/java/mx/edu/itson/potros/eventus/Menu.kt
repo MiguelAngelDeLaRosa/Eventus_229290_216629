@@ -11,7 +11,8 @@ class Menu : AppCompatActivity() {
         setContentView(R.layout.activity_menu)
 
         val button : Button = findViewById(R.id.btnSalir)
-        val btnRegistro: Button = findViewById(R.id.btnRegistro);
+        val btnRegistro: Button = findViewById(R.id.btnRegistro)
+        val btnCotizacion: Button = findViewById(R.id.btnCotizaciones)
 
         var intent: Intent
 
@@ -23,6 +24,11 @@ class Menu : AppCompatActivity() {
         btnRegistro.setOnClickListener(){
             intent = Intent(this, SelectTipoEvento::class.java);
             startActivity(intent);
+        }
+
+        btnCotizacion.setOnClickListener(){
+            intent = Intent(this, Seleccion_evento::class.java)
+            startActivity(intent)
         }
     }
 }
