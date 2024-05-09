@@ -49,6 +49,7 @@
             android:text="Elige el evento"
             android:textStyle="bold"
             android:textSize="20sp"
+            android:layout_gravity="center"
             android:layout_marginLeft="5dp"/>
 
         <RelativeLayout
@@ -58,6 +59,7 @@
             android:layout_marginTop="5dp">
 
             <Spinner
+                android:id="@+id/box_Evento"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -82,10 +84,11 @@
             android:layout_gravity="center"/>
 
         <TextView
+            android:id="@+id/txt_Monto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/spinner_background"
-            android:text="$ Total"
+            android:text="@string/hintAnticipo"
             android:textSize="15sp"
             android:textStyle="bold"
             android:padding="20dp"
@@ -102,10 +105,12 @@
             android:layout_gravity="center"/>
 
         <EditText
+            android:id="@+id/eT_Pago"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Anticipo"
+            android:hint="@string/hintAnticipo"
+            android:textColorHint="@color/naranja"
             android:textAlignment="center"
             android:background="@drawable/spinner_background"
             android:padding="20dp"
@@ -135,15 +140,18 @@
             android:layout_marginTop="5dp">
 
             <Spinner
+                android:id="@+id/box_Pago"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:padding="10sp"
+                android:entries="@array/metodos_de_pago"
                 android:layout_centerInParent="true"/>
         </RelativeLayout>
     </LinearLayout>
 
     <Button
+        android:id="@+id/btnPagoAnticipo"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text="Realizar Pago"

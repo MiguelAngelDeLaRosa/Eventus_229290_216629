@@ -52,6 +52,18 @@
                 android:textAlignment="center"/>
 
             <TextView
+                android:id="@+id/txt_Evento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Evento"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:padding="20dp"
+                android:layout_marginTop="10dp"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/txt_Pago"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="$ Monto"
@@ -62,18 +74,20 @@
                 android:textAlignment="center"/>
 
             <TextView
+                android:id="@+id/txt_tipoPago"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Tipo de pago: *****"
                 android:textSize="30sp"
                 android:textStyle="bold"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="10dp"
                 android:padding="20dp"
                 android:textAlignment="center"/>
         </LinearLayout>
     </LinearLayout>
 
     <Button
+        android:id="@+id/btn_volver"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text="Volver al menu"

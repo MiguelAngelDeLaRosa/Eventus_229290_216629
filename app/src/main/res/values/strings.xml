@@ -34,4 +34,14 @@
     <string name="txtHorarioInicio">Inicio</string>
     <string name="txtHorarioFinal">Fin</string>
     <string name="txtDatosDelCliente">Datos del cliente</string>
+
+    <string name="hintAnticipo">$ 0.00</string>
+
+    <string-array name="metodos_de_pago">
+        <item>Selecciona una opción</item>
+        <item>Debito</item>
+        <item>Credito</item>
+        <item>Paypal</item>
+        <item>Bitcoin</item>
+    </string-array>
 </resources>
