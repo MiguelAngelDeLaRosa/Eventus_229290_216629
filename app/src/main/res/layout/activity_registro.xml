@@ -14,10 +14,6 @@
         android:scaleType="center"
         android:src="@drawable/logo_eventus3"/>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -29,6 +25,7 @@
                 android:layout_width="350dp"
                 android:layout_height="60dp"
                 android:hint="@string/nombre"
+                android:textColorHint="@color/naranja"
                 android:inputType="text"
                 android:background="@drawable/round_button"
                 android:textAlignment="center"
@@ -40,6 +37,7 @@
                 android:layout_width="350dp"
                 android:layout_height="60dp"
                 android:hint="@string/apellido"
+                android:textColorHint="@color/naranja"
                 android:inputType="text"
                 android:background="@drawable/round_button"
                 android:textAlignment="center"
@@ -51,6 +49,7 @@
                 android:layout_width="350dp"
                 android:layout_height="60dp"
                 android:hint="@string/email"
+                android:textColorHint="@color/naranja"
                 android:inputType="textEmailAddress"
                 android:background="@drawable/round_button"
                 android:textAlignment="center"
@@ -62,6 +61,7 @@
                 android:layout_width="350dp"
                 android:layout_height="60dp"
                 android:hint="@string/nombre_usuario"
+                android:textColorHint="@color/naranja"
                 android:inputType="text"
                 android:background="@drawable/round_button"
                 android:textAlignment="center"
@@ -73,6 +73,7 @@
                 android:layout_width="350dp"
                 android:layout_height="60dp"
                 android:hint="@string/password"
+                android:textColorHint="@color/naranja"
                 android:inputType="textPassword"
                 android:background="@drawable/round_button"
                 android:textAlignment="center"
@@ -102,7 +103,4 @@
                 android:background="@drawable/round_button2"/>
 
         </LinearLayout>
-
-    </ScrollView>
-
 </LinearLayout>

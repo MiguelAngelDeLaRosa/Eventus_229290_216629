@@ -5,21 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/naranja_light"
+    android:background="@color/naranja"
     tools:context=".Registrar_datos_cliente">
 
-    <ImageView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="230dp"
-        android:scaleType="center"
-        android:src="@drawable/logo_eventus3"/>
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:scaleType="center"
+            android:src="@drawable/logo_eventus3"/>
+
+    </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/txtDatosDelCliente"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
         android:layout_marginTop="35dp"/>
 
     <EditText
@@ -28,11 +38,12 @@
         android:layout_height="60dp"
         android:layout_gravity="center"
         android:hint="@string/nombre"
+        android:textColorHint="@color/naranja"
         android:inputType="textPersonName"
         android:textColor="@color/naranja"
         android:textAlignment="center"
         android:background="@drawable/round_button"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="30dp"/>
 
     <EditText
         android:id="@+id/edit_telefonoCliente"
@@ -40,6 +51,7 @@
         android:layout_height="60dp"
         android:layout_gravity="center"
         android:hint="@string/telefono"
+        android:textColorHint="@color/naranja"
         android:inputType="textPhonetic"
         android:textColor="@color/naranja"
         android:textAlignment="center"
@@ -52,6 +64,7 @@
         android:layout_height="60dp"
         android:layout_gravity="center"
         android:hint="@string/email"
+        android:textColorHint="@color/naranja"
         android:inputType="textEmailAddress"
         android:textColor="@color/naranja"
         android:textAlignment="center"

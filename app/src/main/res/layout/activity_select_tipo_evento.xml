@@ -5,23 +5,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/naranja_light"
+    android:background="@color/naranja"
     tools:context=".SelectTipoEvento">
 
-    <ImageView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="230dp"
-        android:scaleType="center"
-        android:src="@drawable/logo_eventus3"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:scaleType="center"
+            android:src="@drawable/logo_eventus2"/>
+
+    </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
         android:text="@string/select_event"
+        android:textStyle="bold"
         android:textSize="25sp"
         android:textColor="@color/white"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"/>
 
     <GridLayout
         android:layout_width="match_parent"
@@ -130,7 +140,7 @@
 
     <Button
         android:id="@+id/btnRegresar"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="80dp"
         android:layout_width="237dp"
         android:layout_height="59dp"
         android:text="@string/btnRegresar"

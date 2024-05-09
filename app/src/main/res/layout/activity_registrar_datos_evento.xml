@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/naranja_light"
+    android:background="@color/naranja"
     tools:context=".Registrar_datos_evento">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:orientation="horizontal">
+        android:layout_height="200dp"
+        android:orientation="horizontal"
+        android:background="@color/white">
 
         <ImageButton
             android:id="@+id/back_button"
@@ -22,25 +23,25 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/back_button"/>
 
-        <TextView
-            android:id="@+id/titulo_evento"
-            android:layout_width="match_parent"
+        <ImageView
+            android:layout_width="200dp"
             android:layout_height="match_parent"
-            android:text="@string/option_cumple"
-            android:textSize="45sp"
-            android:textColor="@color/white"
-            android:layout_gravity="center"/>
+            android:layout_marginLeft="80dp"
+            android:background="@drawable/logo_eventus3"/>
 
     </LinearLayout>
-    
+
+
     <TextView
+        android:id="@+id/titulo_evento"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/txtDatosDelEvento"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textSize="40sp"
+        android:textStyle="bold"
         android:textColor="@color/white"
-        android:layout_marginTop="15dp"/>
+        android:layout_marginTop="50dp"/>
 
     <EditText
         android:id="@+id/edit_nombreEvento"
@@ -48,6 +49,7 @@
         android:layout_height="60dp"
         android:layout_gravity="center"
         android:hint="@string/txtNombreEvento"
+        android:textColorHint="@color/naranja"
         android:inputType="text"
         android:textColor="@color/naranja"
         android:textAlignment="center"
@@ -60,6 +62,7 @@
         android:layout_height="60dp"
         android:layout_gravity="center"
         android:hint="@string/txtFechaEvento"
+        android:textColorHint="@color/naranja"
         android:inputType="date"
         android:textColor="@color/naranja"
         android:textAlignment="center"
@@ -73,14 +76,17 @@
         android:layout_height="wrap_content"
         android:text="@string/txtHorario"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textSize="50sp"
+        android:textStyle="bold"
         android:textColor="@color/white"
-        android:layout_marginTop="15dp"/>
+        android:layout_marginTop="50dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:gravity="center">
 
         <EditText
             android:id="@+id/ed_horaInicio"
@@ -88,13 +94,13 @@
             android:layout_height="60dp"
             android:layout_gravity="center"
             android:hint="@string/txtHorarioInicio"
+            android:textColorHint="@color/naranja"
             android:inputType="time"
             android:textColor="@color/naranja"
             android:textAlignment="center"
             android:clickable="false"
             android:focusable="false"
-            android:background="@drawable/round_button"
-            android:layout_marginStart="35dp"/>
+            android:background="@drawable/round_button"/>
 
         <TextView
             android:layout_width="90dp"
@@ -110,6 +116,7 @@
             android:layout_height="60dp"
             android:layout_gravity="center"
             android:hint="@string/txtHorarioFinal"
+            android:textColorHint="@color/naranja"
             android:inputType="time"
             android:textColor="@color/naranja"
             android:clickable="false"
